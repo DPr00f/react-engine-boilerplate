@@ -1,0 +1,19 @@
+{
+  "name": "react-engine-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for react-engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boilerplate",
+    "react",
+    "react-engine",
+    "engine",
+    "es6",
+    "babel"
+  ],
+  "author": "Joao Lopes <jocolopes@gmail.com> (http://joaolopes.info)",
+  "license": "MIT"
+}
