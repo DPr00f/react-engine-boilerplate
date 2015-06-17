@@ -15,5 +15,9 @@
     "babel"
   ],
   "author": "Joao Lopes <jocolopes@gmail.com> (http://joaolopes.info)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0"
+  }
 }
