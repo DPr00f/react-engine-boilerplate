@@ -17,7 +17,9 @@ class Application {
 
 
   configureApp() {
-    this.app.engine('.jsx', renderer.server.create());
+    this.app.engine('.jsx', renderer.server.create({
+      reactRoutes: pathJoin(__dirname, 'components/routes.jsx')
+    }));
     this.app.set('views', pathJoin(__dirname, 'components'));
     this.app.set('view engine', 'jsx');
     this.app.set('view', renderer.expressView);
@@ -33,6 +35,7 @@ class Application {
 
   setRoutes() {
     this.routes.add('/', 'GET', indexController.render);
+    this.routes.add('/:id', 'GET', indexController.render);
   }
 }
 

@@ -1,6 +1,8 @@
 class IndexController {
   render(req, res) {
-    res.render('index');
+    res.render(req.url, {
+      title: 'Person #' + (req.params.id || 'EMPTY')
+    });
   }
 }
 
