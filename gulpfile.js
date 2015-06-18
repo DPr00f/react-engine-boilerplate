@@ -4,10 +4,12 @@ var browserify = require('gulp-browserify');
 var react = require('gulp-react');
 var ext_replace = require('gulp-ext-replace');
 
+var jestTests = '!src/**/__tests__/**/*.js';
+
 var paths = {
-  serverSrc: ['src/server.js'],
-  appSrc: ['src/app/**/*.js'],
-  jsxSrc: ['src/app/components/**/*.jsx'],
+  serverSrc: ['src/server.js', jestTests],
+  appSrc: ['src/app/**/*.js', jestTests],
+  jsxSrc: ['src/app/components/**/*.jsx', jestTests],
   clientSrc: ['src/public/js/main.js'],
   distribution: 'dist'
 };
