@@ -1,11 +1,14 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+var browserify = require('gulp-browserify');
 var react = require('gulp-react');
+var ext_replace = require('gulp-ext-replace');
 
 var paths = {
   serverSrc: ['src/server.js'],
   appSrc: ['src/app/**/*.js'],
   jsxSrc: ['src/app/components/**/*.jsx'],
+  clientSrc: ['src/public/js/main.js'],
   distribution: 'dist'
 };
 
@@ -25,8 +28,17 @@ gulp.task('transpileJSX', function() {
   return gulp.src(paths.jsxSrc)
              .pipe(babel())
              .pipe(react())
+             .pipe(ext_replace('.jsx'))
              .pipe(gulp.dest(paths.distribution + '/app/components'));
 });
 
+gulp.task('compileClient', function() {
+  return gulp.src(paths.clientSrc)
+             .pipe(browserify({
+               transform: ['babelify', 'require-globify']
+             }))
+             .pipe(gulp.dest(paths.distribution + '/public/js/'));
+});
+
 gulp.task('transpile', ['transpileServer', 'transpileApp', 'transpileJSX']);
-gulp.task('build', ['transpile']);
+gulp.task('build', ['transpile', 'compileClient']);

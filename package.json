@@ -18,14 +18,21 @@
   "author": "Joao Lopes <jocolopes@gmail.com> (http://joaolopes.info)",
   "license": "MIT",
   "devDependencies": {
+    "babelify": "^6.1.2",
+    "bulk-require": "^0.2.1",
+    "bulkify": "^1.1.1",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
-    "gulp-react": "^3.0.1"
+    "gulp-browserify": "^0.5.1",
+    "gulp-ext-replace": "^0.2.0",
+    "gulp-react": "^3.0.1",
+    "reactify": "^1.1.1"
   },
   "dependencies": {
     "express": "^4.12.4",
     "react": "^0.13.3",
     "react-engine": "^1.6.0",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "require-globify": "^1.2.1"
   }
 }

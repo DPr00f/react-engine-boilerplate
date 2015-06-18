@@ -17,12 +17,12 @@ class Application {
 
 
   configureApp() {
-    this.app.engine('.js', renderer.server.create());
+    this.app.engine('.jsx', renderer.server.create());
     this.app.set('views', pathJoin(__dirname, 'components'));
-    this.app.set('view engine', 'js');
+    this.app.set('view engine', 'jsx');
     this.app.set('view', renderer.expressView);
 
-    this.app.use( express.static(pathJoin(__dirname, 'public')) );
+    this.app.use( express.static(pathJoin(__dirname, '../public')) );
   }
 
 
@@ -33,7 +33,6 @@ class Application {
 
   setRoutes() {
     this.routes.add('/', 'GET', indexController.render);
-    this.routes.add('/:msg', 'GET', indexController.render);
   }
 }
 
