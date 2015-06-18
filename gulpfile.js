@@ -7,7 +7,7 @@ var ext_replace = require('gulp-ext-replace');
 var jestTests = '!src/**/__tests__/**/*.js';
 
 var paths = {
-  serverSrc: ['src/server.js', jestTests],
+  serverSrc: ['src/*.js', jestTests],
   appSrc: ['src/app/**/*.js', jestTests],
   jsxSrc: ['src/app/components/**/*.jsx', jestTests],
   clientSrc: ['src/public/js/main.js'],
