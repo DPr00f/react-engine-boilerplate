@@ -4,7 +4,8 @@
   "description": "Boilerplate for react-engine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js"
   },
   "keywords": [
     "boilerplate",
@@ -18,6 +19,13 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.1.0"
+    "gulp-babel": "^5.1.0",
+    "gulp-react": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "react": "^0.13.3",
+    "react-engine": "^1.6.0",
+    "react-router": "^0.13.3"
   }
 }
