@@ -2,7 +2,7 @@ import express from 'express';
 import renderer from 'react-engine';
 import { join as pathJoin } from 'path';
 import RoutesController from './controllers/routes.server';
-import indexController from './controllers/index.server';
+import routesList from './routes';
 
 class Application {
 
@@ -34,8 +34,9 @@ class Application {
 
 
   setRoutes() {
-    this.routes.add('/', 'GET', indexController.render);
-    this.routes.add('/:id', 'GET', indexController.render);
+    for (let route of routesList) {
+      this.routes.add(route.route, route.type, route.func);
+    }
   }
 }
 
