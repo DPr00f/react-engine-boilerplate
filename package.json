@@ -37,6 +37,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-ext-replace": "^0.2.0",
     "gulp-react": "^3.0.1",
+    "gulp-sass": "^2.0.1",
     "jest-cli": "^0.4.13",
     "reactify": "^1.1.1",
     "require-globify": "^1.2.1"
