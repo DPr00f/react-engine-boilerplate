@@ -8,6 +8,7 @@ class Page extends React.Component {
         <head>
           <meta charSet="UTF-8" />
           <title>{ this.props.title }</title>
+          <link rel="stylesheet" type="text/css" href="/css/mains.css"/>
         </head>
         <body>
           <ul>

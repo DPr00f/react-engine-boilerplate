@@ -37,7 +37,7 @@ gulp.task('transpileJSX', function() {
 gulp.task('sass', function() {
   return gulp.src(paths.sassSrc)
              .pipe(sass())
-             .pipe(gulp.dest(paths.distribution + '/public/css/main.css'));
+             .pipe(gulp.dest(paths.distribution + '/public/css/'));
 });
 
 gulp.task('compileClient', function() {
