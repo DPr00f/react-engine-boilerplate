@@ -17,7 +17,9 @@
   "smarttabs": true,
   "strict": false,
   "globals": {
-    "define": true
+    "define": true,
+    "jest": true
   },
+  "jasmine": true,
   "predef": [ "-Promise" ]
 }
