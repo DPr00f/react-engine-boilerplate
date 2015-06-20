@@ -1,19 +1,22 @@
 function serveRoute(app, route) {
+  let routeArray = route.mediators;
+  routeArray.push(route.func);
+  routeArray.shift(route.route);
   switch (route.type.toLowerCase()) {
     case 'all':
-      app.all(route.route, route.func);
+      app.all.apply(app, routeArray);
       break;
     case 'get':
-      app.get(route.route, route.func);
+      app.get.apply(app, routeArray);
       break;
     case 'post':
-      app.post(route.route, route.func);
+      app.post.apply(app, routeArray);
       break;
     case 'put':
-      app.put(route.route, route.func);
+      app.put.apply(app, routeArray);
       break;
     case 'delete':
-      app.delete(route.route, route.func);
+      app.delete.apply(app, routeArray);
       break;
     default:
       throw new Error(route.type + ' is not as a valid request type.');
@@ -27,8 +30,8 @@ class RoutesController {
   }
 
 
-  add(route, type, func) {
-    var obj = { route: route, type: type, func: func };
+  add(route, type, func, mediators) {
+    var obj = { route: route, type: type, func: func, mediators: mediators || [] };
     this.routes.push(obj);
     serveRoute(this.app, obj);
   }

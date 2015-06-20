@@ -35,7 +35,7 @@ class Application {
 
   setRoutes() {
     for (let route of routesList) {
-      this.routes.add(route.route, route.type, route.func);
+      this.routes.add(route.route, route.type, route.func, route.mediators);
     }
   }
 }
