@@ -16,9 +16,36 @@ describe('routes.server.js', function() {
       };
       routes = new RoutesController(fakeApp);
     });
-    it('adds of type all', function() {
+
+    it('of type all', function() {
       routes.add('/', 'ALL', function(){});
       expect(fakeApp.all).toBeCalled();
+    });
+
+    it('of type get', function() {
+      routes.add('/', 'GET', function(){});
+      expect(fakeApp.get).toBeCalled();
+    });
+
+    it('of type put', function() {
+      routes.add('/', 'PUT', function(){});
+      expect(fakeApp.put).toBeCalled();
+    });
+
+    it('of type post', function() {
+      routes.add('/', 'POST', function(){});
+      expect(fakeApp.post).toBeCalled();
+    });
+
+    it('of type delete', function() {
+      routes.add('/', 'DELETE', function(){});
+      expect(fakeApp.delete).toBeCalled();
+    });
+
+    it('throws when unknown types', function(){
+      expect(function(){
+        routes.add('/', 'UNDEFINEDTYPE', function() {});
+      }).toThrow();
     });
   });
 });
