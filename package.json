@@ -46,6 +46,6 @@
     "express": "^4.12.4",
     "react": "^0.13.3",
     "react-engine": "^1.6.0",
-    "react-router": "^0.13.3"
+    "react-router": "^1.0.0"
   }
 }
