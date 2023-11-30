@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "express": "^4.12.4",
-    "react": "^0.13.3",
+    "react": "^15.0.0",
     "react-engine": "^1.6.0",
     "react-router": "^0.13.3"
   }
